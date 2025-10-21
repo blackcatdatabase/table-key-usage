@@ -59,7 +59,7 @@ erDiagram
     INT verify_count
     DATETIME(6) last_used_at
   }
-  KEY_USAGE }o--|| CRYPTO_KEYS : (key_id)
+  KEY_USAGE }o--|| CRYPTO_KEYS : "key_id"
 ```
 
 ## Indexes
