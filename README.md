@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **key_usage** (repo: $slug).
+> Schema package for table **key_usage** (repo: `key-usage`).
 
 ## Files
 ```
@@ -51,13 +51,13 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ```mermaid
 erDiagram
   KEY_USAGE {
-    BIGINT id PK
-    BIGINT key_id
-    DATE date
+    INT id PK
+    INT key_id
+    DATETIME date
     INT encrypt_count
     INT decrypt_count
     INT verify_count
-    DATETIME(6) last_used_at
+    DATETIME last_used_at
   }
   KEY_USAGE }o--|| CRYPTO_KEYS : "key_id"
 ```
