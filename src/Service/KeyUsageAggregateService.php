@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\KeyUsage\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\KeyUsage\Dto\KeyUsageDto;
 use BlackCat\Database\Packages\KeyUsage\Mapper\KeyUsageDtoMapper;
 use BlackCat\Database\Packages\KeyUsage\Repository\KeyUsageRepository;
