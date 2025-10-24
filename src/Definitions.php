@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\KeyUsage;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'key_usage'; }
-    public static function contractView(): string { return 'v_key_usage_contract'; }
+    public static function contractView(): string { return 'vw_key_usage'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'key_id', 'date', 'encrypt_count', 'decrypt_count', 'verify_count', 'last_used_at' ]; }
     public static function pk(): string { return 'id'; }
