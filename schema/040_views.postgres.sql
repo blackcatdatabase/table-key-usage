@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@mtime:2025-10-24T09:45:40Z)
+-- Auto-generated from schema-views-postgres.psd1 (map@38d5403)
 -- engine: postgres
 -- table:  key_usage
 -- Contract view for [key_usage]
@@ -6,7 +6,7 @@ CREATE OR REPLACE VIEW vw_key_usage AS
 SELECT
   id,
   key_id,
-  date,
+  usage_date,
   encrypt_count,
   decrypt_count,
   verify_count,
