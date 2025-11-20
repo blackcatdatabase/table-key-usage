@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 
 > Schema package for table **key_usage** (repo: `key-usage`).
 
@@ -39,13 +39,14 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ## Columns
 | Column | Type | Null | Default | Extra |
 |-------:|:-----|:----:|:--------|:------|
-| id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
-| key_id | BIGINT UNSIGNED | NO | — |  |
-| date | DATE | NO | — |  |
-| encrypt_count | INT | NO | 0 |  |
-| decrypt_count | INT | NO | 0 |  |
-| verify_count | INT | NO | 0 |  |
-| last_used_at | DATETIME(6) | YES | — |  |
+| id | BIGINT | — | AS | PK |
+| key_id | BIGINT | NO | — |  |
+| usage_date | DATE | NO | — |  |
+| encrypt_count | INTEGER | NO | 0 |  |
+| decrypt_count | INTEGER | NO | 0 |  |
+| verify_count | INTEGER | NO | 0 |  |
+| last_used_at | TIMESTAMPTZ(6) | YES | — |  |
+| encrypt_count | >= 0 AND decrypt_count >= 0 AND verify_count >= 0 | — | — |  |
 
 ## Relationships
 - FK → **crypto_keys** via (key_id) (ON DELETE CASCADE).
@@ -55,11 +56,12 @@ erDiagram
   KEY_USAGE {
     INT id PK
     INT key_id
-    DATETIME date
-    INT encrypt_count
-    INT decrypt_count
-    INT verify_count
-    DATETIME last_used_at
+    DATETIME usage_date
+    INTEGER encrypt_count
+    INTEGER decrypt_count
+    INTEGER verify_count
+    TIMESTAMPTZ last_used_at
+    COL encrypt_count
   }
   KEY_USAGE }o--|| CRYPTO_KEYS : "key_id"
 ```

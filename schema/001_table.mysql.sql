@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-map-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  key_usage
 CREATE TABLE IF NOT EXISTS key_usage (
@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS key_usage (
   verify_count INT NOT NULL DEFAULT 0,
   last_used_at DATETIME(6) NULL,
   UNIQUE KEY uq_key_usage_key_date (key_id, usage_date)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;

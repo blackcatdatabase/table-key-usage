@@ -1,4 +1,4 @@
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 # Definition – key_usage
 
 Daily counters of key operations.
@@ -6,10 +6,10 @@ Daily counters of key operations.
 ## Columns
 | Column | Type | Null | Default | Description | Notes |
 |-------:|:-----|:----:|:--------|:------------|:------|
-| id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
-| key_id | BIGINT UNSIGNED | NO | — | Key (FK crypto_keys.id). |  |
-| date | DATE | NO | — | UTC date (yyyy-mm-dd). |  |
-| encrypt_count | INT | NO | 0 | Encrypt operations count. |  |
-| decrypt_count | INT | NO | 0 | Decrypt operations count. |  |
-| verify_count | INT | NO | 0 | Verify operations count. |  |
-| last_used_at | DATETIME(6) | YES | — | Last usage timestamp (UTC). |  |
+| id | BIGINT | — | AS | Surrogate primary key. |  |
+| key_id | BIGINT | NO | — | Key (FK crypto_keys.id). |  |
+| usage_date | DATE | NO | — |  |  |
+| encrypt_count | INTEGER | NO | 0 | Encrypt operations count. |  |
+| decrypt_count | INTEGER | NO | 0 | Decrypt operations count. |  |
+| verify_count | INTEGER | NO | 0 | Verify operations count. |  |
+| last_used_at | TIMESTAMPTZ(6) | YES | — | Last usage timestamp (UTC). |  |
