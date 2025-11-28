@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class KeyUsageDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'key_id' => 'keyId', 'usage_date' => 'usageDate', 'encrypt_count' => 'encryptCount', 'decrypt_count' => 'decryptCount', 'verify_count' => 'verifyCount', 'last_used_at' => 'lastUsedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'key_id' => 'keyId', 'usage_date' => 'usageDate', 'encrypt_count' => 'encryptCount', 'decrypt_count' => 'decryptCount', 'verify_count' => 'verifyCount', 'last_used_at' => 'lastUsedAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
