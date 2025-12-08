@@ -6,12 +6,12 @@ Daily counters of key operations.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | date |  | YES |  | UTC date (yyyy-mm-dd). |
-| decrypt_count | INTEGER | NO | 0 | Decrypt operations count. |
-| encrypt_count | INTEGER | NO | 0 | Encrypt operations count. |
+| decrypt_count | INT | NO | 0 | Decrypt operations count. |
+| encrypt_count | INT | NO | 0 | Encrypt operations count. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | key_id | BIGINT | NO |  | Key (FK crypto_keys.id). |
-| last_used_at | TIMESTAMPTZ(6) | YES |  | Last usage timestamp (UTC). |
-| verify_count |  | NO | 0 | Verify operations count. |
+| last_used_at | DATETIME(6) | YES |  | Last usage timestamp (UTC). |
+| verify_count | INT | NO | 0 | Verify operations count. |
 
 ## Engine Details
 
@@ -54,5 +54,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_key_usage | mysql | algorithm=MERGE, security=INVOKER | [packages\key-usage\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/key-usage/schema/040_views.mysql.sql) |
-| vw_key_usage | postgres |  | [packages\key-usage\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/key-usage/schema/040_views.postgres.sql) |
+| vw_key_usage | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_key_usage | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
