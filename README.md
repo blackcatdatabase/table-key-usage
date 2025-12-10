@@ -96,8 +96,8 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `decrypt_count` – default=0
 - `encrypt_count` – default=0
+- `decrypt_count` – default=0
 - `verify_count` – default=0
 
 ## Schema Files
