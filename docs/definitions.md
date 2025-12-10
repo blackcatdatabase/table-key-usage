@@ -6,11 +6,11 @@ Daily counters of key operations.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | date |  | YES |  | UTC date (yyyy-mm-dd). |
-| decrypt_count | INT | NO | 0 | Decrypt operations count. |
-| encrypt_count | INT | NO | 0 | Encrypt operations count. |
+| decrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Decrypt operations count. |
+| encrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Encrypt operations count. |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | key_id | BIGINT | NO |  | Key (FK crypto_keys.id). |
-| last_used_at | DATETIME(6) | YES |  | Last usage timestamp (UTC). |
+| last_used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last usage timestamp (UTC). |
 | verify_count | INT | NO | 0 | Verify operations count. |
 
 ## Engine Details
