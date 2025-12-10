@@ -1,0 +1,58 @@
+# key_usage
+
+Daily counters of key operations.
+
+## Columns
+| Column | Type | Null | Default | Description |
+| --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |
+| key_id | BIGINT | NO |  | Key (FK crypto_keys.id). |
+| encrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Encrypt operations count. |
+| decrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Decrypt operations count. |
+| verify_count | INT | NO | 0 | Verify operations count. |
+| last_used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last usage timestamp (UTC). |
+| date |  | YES |  | UTC date (yyyy-mm-dd). |
+
+## Engine Details
+
+### mysql
+
+Unique keys:
+| Name | Columns |
+| --- | --- |
+| uq_key_usage_key_date | key_id, usage_date |
+
+Indexes:
+| Name | Columns | SQL |
+| --- | --- | --- |
+| uq_key_usage_key_date | key_id,usage_date | UNIQUE KEY uq_key_usage_key_date (key_id, usage_date) |
+
+Foreign keys:
+| Name | Columns | References | Actions |
+| --- | --- | --- | --- |
+| fk_key_usage_key | key_id | crypto_keys(id) | ON DELETE CASCADE |
+
+### postgres
+
+Unique keys:
+| Name | Columns |
+| --- | --- |
+| uq_key_usage_key_date | key_id, usage_date |
+
+Indexes:
+| Name | Columns | SQL |
+| --- | --- | --- |
+| uq_key_usage_key_date | key_id,usage_date | CONSTRAINT uq_key_usage_key_date UNIQUE (key_id, usage_date) |
+
+Foreign keys:
+| Name | Columns | References | Actions |
+| --- | --- | --- | --- |
+| fk_key_usage_key | key_id | crypto_keys(id) | ON DELETE CASCADE |
+
+## Engine differences
+
+## Views
+| View | Engine | Flags | File |
+| --- | --- | --- | --- |
+| vw_key_usage | mysql | algorithm=MERGE, security=INVOKER | [../schema/040_views.mysql.sql](../schema/040_views.mysql.sql) |
+| vw_key_usage | postgres |  | [../schema/040_views.postgres.sql](../schema/040_views.postgres.sql) |
