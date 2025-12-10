@@ -17,7 +17,7 @@
 | What | Link | Notes |
 | --- | --- | --- |
 | Schema map | [schema-map-postgres.yaml](https://github.com/blackcatacademy/blackcat-database/blob/main/scripts/schema/schema-map-postgres.yaml) | Source for table metadata |
-| Pkg folder | [packages\key-usage](https://github.com/blackcatacademy/blackcat-database/blob/main/packages\key-usage) | Repo location |
+| Pkg folder | [packages\key-usage](https://github.com/blackcatacademy/blackcat-database/blob/main/packages/key-usage) | Repo location |
 | Definitions | [docs/definitions.md](docs/definitions.md) | Column/index/FK docs |
 | Engine differences | [docs/definitions.md#engine-differences](docs/definitions.md#engine-differences) | Drift section in definitions |
 | Changelog | [CHANGELOG.md](CHANGELOG.md) | Recent changes |
@@ -96,9 +96,9 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
+- `verify_count` – default=0
 - `decrypt_count` – default=0
 - `encrypt_count` – default=0
-- `verify_count` – default=0
 
 ## Schema Files
 | File | Engine |
