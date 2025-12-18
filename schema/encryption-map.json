@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "key_usage": {
+      "columns": {
+        "decrypt_count": {
+          "strategy": "passthrough"
+        },
+        "encrypt_count": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "key_id": {
+          "strategy": "passthrough"
+        },
+        "last_used_at": {
+          "strategy": "passthrough"
+        },
+        "usage_date": {
+          "strategy": "passthrough"
+        },
+        "verify_count": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
