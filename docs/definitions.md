@@ -3,15 +3,15 @@
 Daily counters of key operations.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| key_id | BIGINT | NO |  | Key (FK crypto_keys.id). |
-| encrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Encrypt operations count. |
-| decrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Decrypt operations count. |
-| verify_count | INT | NO | 0 | Verify operations count. |
-| last_used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last usage timestamp (UTC). |
-| date |  | YES |  | UTC date (yyyy-mm-dd). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| key_id | BIGINT | NO |  | Key (FK crypto_keys.id). |  |
+| usage_date | DATE | NO |  | UTC date (yyyy-mm-dd). |  |
+| encrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Encrypt operations count. |  |
+| decrypt_count | mysql: INT / postgres: INTEGER | NO | 0 | Decrypt operations count. |  |
+| verify_count | mysql: INT | NO | 0 | Verify operations count. |  |
+| last_used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | Last usage timestamp (UTC). |  |
 
 ## Engine Details
 
